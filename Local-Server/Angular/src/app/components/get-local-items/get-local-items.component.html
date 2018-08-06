@@ -1,0 +1,35 @@
+<div class="container">
+  <h1>Current Stock</h1><br>
+</div>
+
+<div class="alert alert-dismissible alert-secondary">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong>NOTE:</strong> <p>{{notify}} This page will get refreshed automatically.</p>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>PID</th>
+      <th>
+        Date Added
+      </th>
+      <th>Type</th>
+      <th>Sold</th>
+      <th>Sold Date</th>
+      <th>Finally Sold</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let item of items">
+    <tr>
+      <td>{{item.name}}</td>
+      <td>{{item.PID}}</td>
+      <td>{{item.dateAdded}}</td>
+      <td>{{item.type}}</td>
+      <td>{{item.sold}}</td>
+      <td>{{item.dateSold}}</td>
+      <td>{{item.finallySold}}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,13 @@
+<div class  = "container">
+  <h1>Create UUID</h1>
+  <br>
+  <input type="text" name=to placeholder="name" [(ngModel)]="name"><br><br>
+  <input type="text" name=item placeholder="type" [(ngModel)]="type"><br><br>
+  <input type="text" name=qty placeholder="zone" [(ngModel)]="zone"><br><br>
+  <button class="btn-primary btn" (click)="submit()">Get UUID</button>
+  
+</div>
+<div class="alert alert-dismissible alert-secondary">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong>NOTE:</strong> <p>{{response}}.</p>
+</div>

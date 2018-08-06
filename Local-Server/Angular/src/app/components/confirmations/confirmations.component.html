@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>Confirmed Requests</h1>
+  <br>
+  <br>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>To</th>
+      <th>Req No.</th>
+      <th>Item</th>
+      <th>Quantity</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let request of requests">
+    <tr>
+      <td>{{request.to}}</td>
+      <td>{{request._id}}</td>
+      <td>{{request.item.productName}}</td>
+      <td>{{request.item.qty}}</td>
+    </tr>
+  </tbody>
+</table>
+<p>These are the confirmations till date.</p>
+<div class="btn-container">
+  <button class="btn btn-primary" (click)="getConfirmations()">Get New Confirmations</button>
+</div>
+
+<div>
+  <p>{{response}}</p>
+</div>

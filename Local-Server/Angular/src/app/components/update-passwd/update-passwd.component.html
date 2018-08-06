@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Update Password</h1>
+  <br><br>
+  <input type="text" name=text placeholder="username" [(ngModel)]='username'><br><br>
+  <input type="password" name=password placeholder="Password" [(ngModel)]='Password'><br><br>
+  <input type="password" name=password placeholder="new Password" [(ngModel)]='newPassword'><br><br>
+  <input type="password" (keyup)='upPass()' name=reNewPassword placeholder="retype new password"[(ngModel)]='reNewPassword'><br><br>
+  <p>{{output}}</p>
+  <button class="btn-primary btn"  (click)="updatePasswd()">Update Password</button>
+<p>{{response}}</p>
+  </div><br><br>
+
+  <div class="container">
+    <button class="btn-primary btn" (click)="goto('dashboard')">Dashboard</button>
+  </div>

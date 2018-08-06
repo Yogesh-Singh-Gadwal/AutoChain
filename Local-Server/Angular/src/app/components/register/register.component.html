@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Sign Up</h1>
+  <br>
+  <input type="text" name=name placeholder="Name" [(ngModel)]='shopname'>
+  <br>
+  <br>
+  <input type="text" name=username placeholder="username" [(ngModel)]='username'>
+  <br>
+  <br>
+  <input type="text" name=retailer placeholder="Retailer?" [(ngModel)]='retailer'>
+  <p>Write yes/no</p>
+  <br>
+  <input type="password" name=password placeholder="password" [(ngModel)]='password'>
+  <br>
+  <br>
+  <input type="password" (keyup)='chPass()' name=retype placeholder="retype password" [(ngModel)]='repassword'>{{output}}
+<br><br>
+  <button class="btn-primary btn" (click)="register('login')">Sign Up</button>
+</div>

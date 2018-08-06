@@ -1,0 +1,27 @@
+<div class="container">
+    <h1>Block-Chain</h1>
+</div>
+
+<table class="table">
+<thead>
+  <tr>
+    <th>Timestamp</th>
+    <th>To</th>
+    <th>From</th>
+    <th>Product</th>
+    <th>Previous Hash</th>
+    <th>Hash</th>
+  </tr>
+</thead>
+<tbody *ngFor="let block of blocks">
+  <tr>
+    <td>{{block.timestamp}}</td>
+    <td>{{block.to}}</td>
+    <td>{{block.from}}</td>
+    <td>{{block.productName}}</td>
+    <td>{{block.previousHash}}</td>
+    <td>{{block.hash}}</td>
+  </tr>
+</tbody>
+</table>
+<p>{{response}}</p>

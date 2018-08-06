@@ -1,0 +1,60 @@
+<script>
+  $( function() {
+    $( "#dialog-message" ).dialog({
+      modal: true,
+      buttons: {
+        Ok: function() {
+          $( this ).dialog( "close" );
+        }
+      }
+    });
+  } );
+  </script>
+<div class="container">
+  
+  <div class="container1">
+<h2>Dashboard</h2>
+</div>
+<br>
+<div class="line">
+  <button class="btn-primary btn" (click)="goto('getUUID')">Create UUID</button>
+<button class="btn-primary btn" (click)="goto('makeReq')">Make Request</button>
+<button class="btn-primary btn" (click)="goto('requests')">Request List</button><br><br>
+<button class="btn-primary btn" (click)="goto('confirmations')">Confirmation List</button>
+<button class="btn-primary btn" (click)="goto('accepts')">Accepted Requests</button>
+<button class="btn-primary btn" (click)="goto('getLocalItems')">Inventory List</button>
+<button class="btn-primary btn" (click)="goto('seeChain')">Full Chain</button>
+<button class="btn-primary btn" (click)="goto('findUuid')">Find UUID</button>
+<button class="btn-primary btn" (click)="goto('updatePasswd')">Update Password</button>
+<button class="btn-primary btn" (click)="goto('removeUser')">Delete Account</button>
+</div>
+<br><br>
+
+<!-- <p>{{response}}</p><br> -->
+<p>Logged in as:</p>
+<div id="dialog-message" title="Download complete">
+  <p>
+    <span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
+    {{response}}
+  </p>
+  </div>
+<br>
+<table class='table'>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Username</th>
+    <th>Retailer</th>
+  </tr>
+</thead>
+<tbody >
+  <tr>
+    <td>{{users.name}}</td>
+    <td>{{users.username}}</td>
+    <td>{{users.retailer}}</td>
+  </tr>
+</tbody>
+</table>
+</div>
+
+

@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>Accepted Requests</h1>
+  <br>
+  <br>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>From</th>
+      <th>Req No.</th>
+      <th>Item</th>
+      <th>Quantity</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let request of requests">
+    <tr>
+      <td>{{request.from}}</td>
+      <td>{{request._id}}</td>
+      <td>{{request.item.productName}}</td>
+      <td>{{request.item.qty}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="container">
+    <p>{{response}}</p>
+</div>

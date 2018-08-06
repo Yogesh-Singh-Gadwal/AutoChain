@@ -1,0 +1,38 @@
+<div class="container">
+  <h1> Requests</h1>
+</div>
+
+<table class="table">
+<thead>
+<tr>
+  <th>From</th>
+  <th>Req No.</th>
+  <th>Item</th>
+  <th>Quantity</th>
+  <th>Accept</th>
+  <th>Reject</th>
+</tr>
+</thead>
+<tbody *ngFor="let request of requests">
+<tr>
+  <td>{{request.from}}</td>
+  <td>{{request._id}}</td>
+  <td>{{request.item.productName}}</td>
+  <td>{{request.item.qty}}</td>
+  <td>
+    <button (click)="onAccept(request)" class="btn">click</button>
+  </td>
+  <td>
+    <button (click)="onReject(request)" class="btn">click</button>
+  </td>
+</tr>
+</tbody>
+</table>
+
+<p>These are the requests till date.</p>
+<div class="btn-container">
+<button class="btn-primary btn" (click)="getRequests()">Get New Requests</button>
+</div>
+<div>
+<p>{{response}}</p>
+</div>

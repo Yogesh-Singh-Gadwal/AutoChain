@@ -1,0 +1,57 @@
+<!-- <h1>AutoChain</h1>
+<p>The Place for Your Automated supply-Chain Management</p>
+<br>
+<button *ngIf='!USER.isLoggedIn()' class='btn-primary' (click)='goto("login")'>Login</button>
+<button *ngIf='!USER.isLoggedIn()' class='btn-primary' (click)='goto("register")'>Sign Up</button>
+<button *ngIf='USER.isLoggedIn()' class='btn-primary' (click)='logout("login")'>Logout</button>
+<button *ngIf='USER.isLoggedIn()' class="btn-primary btn" (click)="goto('dashboard')">dashboard</button>
+<hr> -->
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">AutoChain</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button> -->
+
+    <script *ngIf='USER.isLoggedIn()'>
+        var users = USER.getStoredUser();
+        userName = users.username;
+              
+      </script>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <img src="https://lh3.googleusercontent.com/bNIqy1flPxcMnBSScqkXZJTQa21F_TDcjFGP1_zEOJ8sf7j7unvDgSYbSYoOeMivztW6BA=s85"
+    alt="LOGO" width="45" height="45"/>&nbsp;&nbsp;&nbsp;&nbsp;
+  <a class="navbar-brand" href="#">AutoChain</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor02">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active" *ngIf='!USER.isLoggedIn()'>
+        <a class="nav-link" href="#">Dashboard
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+      <li class="nav-item" *ngIf='!USER.isLoggedIn()'>
+        <a class="nav-link" routerLink="/login">Login</a>
+      </li>
+      <li class="nav-item" *ngIf='!USER.isLoggedIn()'>
+        <a class="nav-link" routerLink="/register">Sign Up</a>
+      </li>
+      <!-- <li class="nav-item" *ngIf='USER.isLoggedIn()'>
+        <button class="btn btn-primary" (click)='logout("login")'>Logout</button>
+      </li> -->
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+        <button class="btn btn-primary"  *ngIf='USER.isLoggedIn()' (click)='logout("login")'>Logout</button>
+        <!-- <p id="User" *ngIf='USER.isLoggedIn()'>Welcome {{userName}}</p>  -->
+    </form>
+  </div>
+</nav>
+<!-- <script>
+  users = USER.getStoredUser();
+  userName = users.username;
+</script> -->
+<router-outlet></router-outlet>

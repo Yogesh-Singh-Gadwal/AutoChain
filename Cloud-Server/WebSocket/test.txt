@@ -1,0 +1,127 @@
+// var WebSocket = require('ws')
+
+// var p2p_port = process.env.p2p_port || 6008
+
+// var initialPeers = process.env.PEERS ? process.env.PEERS.split(',') : [];
+
+// var abc = module.exports.socket = [];
+
+
+
+// module.exports.initP2PServer = () => {
+
+//     var server = new WebSocket.Server({ port: p2p_port });
+//     server.on('connection', ws => {
+//         initConnection(ws);
+//         //console.log(abc.length);
+//         //     abc.forEach(element => {
+//         //         // console.log(String(JSON.parse(JSON.stringify(Buffer(element.toString()))).data));
+//         //      console.log(Object.keys(element));
+//         //  console.log("=========================================");
+//         //  console.log(element._socket.remoteAddress);
+
+//         //      console.log(Object.keys(element._socket));
+
+
+//         //         // console.log(element._sender);   
+//         //     });
+
+//         ws.on("close", function (conn) {
+//             console.log(Object.keys(ws));
+
+//             if (abc.length != 0) {
+//                 abc.forEach(function (ele, ind) {
+//                     if (ele.conIP == ws.conIP) {
+//                         abc.splice(ind, 1)
+//                         console.log(ind)
+//                     }
+//                 })
+//             }
+
+//             console.log("close : " + ws.conIP);
+//             // server.broadcast(conn.id + " has closed.");
+//         });
+
+//         //         ws.on("close", function (one,two,three) {
+//         //             // console.log(abc.length)
+//         //             // console.log("==========================")
+//         //             // console.log(conn)
+//         //             // console.log(abc.length)
+//         // console.log(one.id,two,three);
+
+
+//         //             // if (abc.length != 0) {
+//         //             //     abc.forEach(function (ele, ind) {
+//         //             //         // var cCode = JSON.parse(JSON.stringify(ele).split(" ")[0])._closeCode;
+//         //             //         console.log(ele._closeCode)
+//         //             //         if (ele._closeCode == conn) {
+//         //             //             abc.splice(ind, 1)
+//         //             //             console.log(ind)
+//         //             //         }
+//         //             //     })
+//         //             // }
+//         //             // console.log(abc.length)
+
+//         //             // var index = socket.indexOf(conn);
+//         //             //console.log("close : "+index+"   "+conn.id);
+
+//         //         });
+
+
+//         ws.on("error", function (e) {
+
+//             console.log("close :" + e)
+
+//         })
+
+
+
+//     })
+//     console.log('listening websocket on :' + p2p_port);
+// }
+
+
+// var initConnection = (ws) => {
+//     ws.conIP = ws._socket.remoteAddress.split(":")[3];
+//     module.exports.socket.push(ws);
+
+// };
+
+
+
+// var initMessageHandler = (ws) => {
+
+//     ws.on('message', (data) => {
+
+//         console.log("Message In:");
+//         const msg = JSON.parse(data)
+//         console.log(msg.event)
+//     })
+
+//     console.log("message handler setup");
+
+
+// }
+
+
+
+// module.exports.connectToPeers = (newPeers) => {
+
+//     newPeers.forEach(function (peer) {
+
+//         var ws = new WebSocket(peer)
+//         ws.on('open', () => initConnection(ws));
+//         ws.on('error', () => {
+//             console.log("connection fail")
+//         });
+//     });
+
+// };
+
+
+// var write = (ws, message) =>
+//     ws.send(JSON.stringify(message));
+
+// module.exports.brodcast = (message) => module.exports.socket.forEach(socket => write(socket, message));
+// module.exports.connectToPeers(initialPeers);
+

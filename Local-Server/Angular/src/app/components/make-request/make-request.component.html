@@ -1,0 +1,24 @@
+<div class  = "container">
+  <h1>Make Request</h1>
+  <input type="text" name=to placeholder="To" [(ngModel)]="to"><br><br>
+  <input type="text" name=item placeholder="Item" [(ngModel)]="name"><br><br>
+  <input type="text" name=qty placeholder="Quantity" [(ngModel)]="qty"><br><br>
+  <button class="btn-primary btn" (click)="submit()">Make Request</button>
+  
+  <p>{{response}}</p>
+</div>
+
+<table class="table" *ngIf="clickedAddItem">
+  <thead>
+<tr>
+  <th>Item</th>
+  <th>Quantity</th>
+</tr>
+  </thead>
+  <tbody *ngFor="let item of items">
+    <tr>
+      <td>{{item.name}}</td>
+      <td>{{item.qty}}</td>
+    </tr>
+  </tbody>
+</table>

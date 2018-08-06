@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Delete Account</h1>
+  <br>
+  <br>
+
+<input type="text" name=username placeholder="username" [(ngModel)]='username'><br><br>
+<input type="password" name=password placeholder="password" [(ngModel)]='password'><br><br>
+<input type="repassword" name=repassword placeholder="re-password" [(ngModel)]='repassword' (keyup)='passchk()'><br><br>
+{{output}}
+<button class="btn-warning btn"  (click)="delAcc('login')">Delete</button>
+</div>
